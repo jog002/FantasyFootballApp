@@ -1,0 +1,136 @@
+.leaderboard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  height: fit-content;
+  max-height: 650px;
+  overflow-y: auto;
+}
+
+.leaderboard h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.empty-leaderboard {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+}
+
+.empty-leaderboard p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.draft-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.draft-pick-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  transition: all 0.3s ease;
+  animation: pickAppear 0.5s ease-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes pickAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.draft-pick-compact:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pick-number-compact {
+  font-size: 1rem;
+  font-weight: bold;
+  min-width: 40px;
+}
+
+.pick-team-compact {
+  font-size: 1rem;
+  font-weight: bold;
+  flex: 1;
+  text-align: center;
+}
+
+.pick-medal {
+  font-size: 1.2rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Scrollbar styling */
+.leaderboard::-webkit-scrollbar {
+  width: 6px;
+}
+
+.leaderboard::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.leaderboard::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.leaderboard::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .leaderboard {
+    padding: 1rem;
+    max-height: 400px;
+  }
+  
+  .leaderboard h3 {
+    font-size: 1.3rem;
+  }
+  
+  .draft-pick {
+    padding: 0.8rem;
+  }
+  
+  .pick-number {
+    font-size: 1rem;
+  }
+  
+  .pick-team {
+    font-size: 1rem;
+  }
+  
+  .pick-message {
+    font-size: 0.8rem;
+  }
+} 
